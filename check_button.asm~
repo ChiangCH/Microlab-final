@@ -1,7 +1,3 @@
-;------------------------------------------
-; TRIAL: using P1.0 and P1.1 as triggered
-;------------------------------------------
-
 SPEAKER REG P0.0
 TONE    REG R0
 MCOUNT  REG R1
@@ -26,7 +22,7 @@ BEGIN:
 L0:
 	MOV MCOUNT,#0	;read the 1st row of table
 	MOV R4,#1	;choose the first entry from table
-	CALL BEGIN2	;call the buzzer function
+	CALL BEGIN2
 	
     JMP BEGIN
 
