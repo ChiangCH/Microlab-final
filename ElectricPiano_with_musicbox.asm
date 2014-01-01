@@ -23,6 +23,10 @@ BEGIN:
 	JNB P2.1,L5
 	JNB P2.2,L6
 	;JNB P1.3,L7
+
+	MOV P3,#11011111B
+	JNB P2.0,MUSICBOX
+	
 	JMP BEGIN
 L0:
 	MOV MCOUNT,#0	;read the 1st row of table
@@ -72,7 +76,14 @@ L6:
 	MOV P0,#00000111B ;led
 	CALL BEGIN2
     	JMP BEGIN
-	
+
+MUSICBOX:
+	MOV COUNT, #14
+	MOV R4, #12		
+	CALL BEGIN2
+    	JMP BEGIN
+
+
 BEGIN2:
 	MOV     DPTR,#SCALE
 	MOV     A,MCOUNT
@@ -118,4 +129,16 @@ SCALE:
 	DB    75,220	;la
 	DB    67,247	;si
 	;DB    63,261	;Do
-	
+	DB    85,49
+        DB    85,49
+        DB    75,110
+        DB    85,98
+        DB    63,130
+        DB    67,247
+        DB    85,49
+        DB    85,49
+        DB    75,110
+        DB    85,98
+        DB    63,130
+        DB    67,247
+
